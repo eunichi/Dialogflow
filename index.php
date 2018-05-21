@@ -7,7 +7,7 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->fulfillmentMessages[]->text->text;
+	$text = $json->result->parameters->text;
 
 	switch ($text) {
 		case 'hi':
@@ -23,7 +23,7 @@ if($method == 'POST'){
 			break;
             
 		case '':
-			$fulfillmentText = "You've sent a <space> or NULL text to the web service";
+			$fulfillmentText = "You've sent a <space> or NULL text to the web service :<";
 			break;
 		
 		default:
