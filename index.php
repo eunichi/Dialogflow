@@ -21,6 +21,10 @@ if($method == 'POST'){
 		case 'anything':
 			$fulfillmentText = "Yes, you can type anything here.";
 			break;
+            
+		case '':
+			$fulfillmentText = "You've sent a <space> or NULL text to the web service";
+			break;
 		
 		default:
 			$fulfillmentText = "Sorry, I didnt get that. Please ask me something else.";
